@@ -4,19 +4,30 @@ FROM library/debian:stretch-20180426
 RUN apt-get update && apt-get install -y \
   build-essential \
   libssl-dev \
+  software-properties-common \
   python \
   curl 
 
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
+RUN add-apt-repository \
+  "deb [arch=amd64] https://download.docker.com/linux/debian \
+  $(lsb_release -cs) \
+  stable"
 
 RUN apt-get update && apt-get install -y \
   nodejs=8.11.2-1nodesource1 \
-  yarn=1.7.0-1
+  yarn=1.7.0-1 \
+  docker-ce=18.03.1~ce-0~debian
 
 # Install pip
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python get-pip.py && rm get-pip.py
+
+# Install docker-compose
+RUN curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+RUN chmod +x /usr/local/bin/docker-compose
 
 # Install AWS cli
 RUN pip install awscli==1.15.35
