@@ -38,3 +38,6 @@ RUN chmod +x /usr/local/bin/ecs-cli
 
 # Update npm
 RUN npm i -g npm@6.1.0
+
+# Install serverless-cli
+RUN npm i -g serverless@1.27.3
