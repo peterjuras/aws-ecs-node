@@ -32,6 +32,9 @@ RUN chmod +x /usr/local/bin/docker-compose
 # Install AWS cli
 RUN pip install awscli==1.15.35
 
+# Install AWS EB CLI
+RUN pip install awsebcli==3.14.0 
+
 # Install AWS ECS cli
 RUN curl -o /usr/local/bin/ecs-cli https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-linux-amd64-v1.6.0
 RUN chmod +x /usr/local/bin/ecs-cli
