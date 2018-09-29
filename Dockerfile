@@ -18,7 +18,7 @@ RUN add-apt-repository \
   stable"
 
 RUN apt-get update && apt-get install -y \
-  nodejs=8.11.2-1nodesource1 \
+  nodejs=8.12.0-1nodesource1 \
   docker-ce=18.03.1~ce-0~debian
 
 # Install pip
