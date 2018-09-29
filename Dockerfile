@@ -18,6 +18,7 @@ RUN add-apt-repository \
 
 RUN apt-get update && apt-get install -y \
   nodejs=8.12.0-1nodesource1 \
+  yarn=1.7.0-1 \
   docker-ce=18.03.1~ce-0~debian
 
 # Install pip
@@ -26,9 +27,6 @@ RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python get-pip.py
 # Install docker-compose
 RUN curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 RUN chmod +x /usr/local/bin/docker-compose
-
-# Install yarn
-RUN curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.10.1
 
 # Install AWS cli
 RUN pip install awscli==1.15.35
