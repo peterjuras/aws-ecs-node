@@ -20,7 +20,8 @@ RUN add-apt-repository \
 RUN apt-get update && apt-get install -y \
   nodejs=8.12.0-1nodesource1 \
   yarn=1.10.1-1 \
-  docker-ce=18.03.1~ce-0~debian
+  docker-ce=18.03.1~ce-0~debian \
+  jq
 
 # Install pip
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python get-pip.py && rm get-pip.py
