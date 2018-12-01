@@ -18,7 +18,7 @@ RUN add-apt-repository \
   stable"
 
 RUN apt-get update && apt-get install -y \
-  nodejs=10.13.0-1nodesource1 \
+  nodejs=10.14.1-1nodesource1 \
   yarn=1.12.3-1 \
   docker-ce=18.03.1~ce-0~debian
 
@@ -43,4 +43,4 @@ RUN chmod +x /usr/local/bin/ecs-cli
 RUN npm i -g npm@6.4.1
 
 # Install serverless-cli
-RUN npm i -g serverless@1.32.0
+RUN npm i -g serverless@1.34.1
