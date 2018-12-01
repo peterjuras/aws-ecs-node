@@ -18,7 +18,7 @@ RUN add-apt-repository \
   stable"
 
 RUN apt-get update && apt-get install -y \
-  nodejs=10.13.0-1nodesource1 \
+  nodejs=10.14.0-1nodesource1 \
   yarn=1.12.3-1 \
   docker-ce=18.03.1~ce-0~debian
 
