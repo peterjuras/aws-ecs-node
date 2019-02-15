@@ -9,7 +9,7 @@ RUN curl https://bootstrap.pypa.io/get-pip.py -o ~/get-pip.py && python3 ~/get-p
 RUN pip install awsebcli==3.14.11 --user && sudo ln -s ~/.local/bin/eb /usr/local/bin/eb
 
 # Install AWS cli
-RUN pip install awscli==1.16.96 --user && sudo ln -s ~/.local/bin/aws /usr/local/bin/aws
+RUN pip install awscli==1.16.105 --user && sudo ln -s ~/.local/bin/aws /usr/local/bin/aws
 
 # Install AWS ECS cli
 RUN sudo curl -o /usr/local/bin/ecs-cli https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-linux-amd64-v1.12.1
