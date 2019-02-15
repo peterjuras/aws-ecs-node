@@ -16,7 +16,7 @@ RUN sudo curl -o /usr/local/bin/ecs-cli https://s3.amazonaws.com/amazon-ecs-cli/
 RUN sudo chmod +x /usr/local/bin/ecs-cli
 
 # Update npm
-RUN sudo npm i -g npm@6.7.0
+RUN sudo npm i -g npm@6.8.0
 
 # Install serverless-cli
 RUN sudo npm i -g serverless@1.36.3
